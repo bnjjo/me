@@ -1,0 +1,35 @@
+* {
+	color: #cdd6f4;
+	font-family: sans-serif;
+}
+
+body {
+	background-color: #1e1e2e;
+	padding: 10px;
+}
+
+.title-bar, .links {
+	display: flex;
+	flex-direction: row;
+	gap: 30px;
+	align-items: center;
+}
+
+.title-bar h1 {
+	color: #cba6f7;
+}
+
+pre {
+	background-color: #181825;
+	border-radius: 10px;
+	text-align: left;
+	padding: 10px;
+	max-width: 600px;
+	overflow-x: auto;
+}
+
+pre code {
+	font-family: 'JetBrains Mono', monospace;
+	font-size: 11pt;
+	text-align: left;
+}
