@@ -210,6 +210,47 @@ loadProjects();
 
 
 // ============================================================
+// CONTACT FORM
+// ============================================================
+
+const CONTACT_EMAIL = 'hi@bnjjo.dev';
+
+const contactForm = document.getElementById('contact-form');
+
+if (contactForm) {
+
+  contactForm.addEventListener('submit', function (e) {
+
+    e.preventDefault();
+
+    const emailField =
+      document.getElementById('contact-email');
+
+    const messageField =
+      document.getElementById('contact-message');
+
+    const senderEmail =
+      emailField.value.trim();
+
+    const message =
+      messageField.value.trim();
+
+    const subject =
+      `Message from ${senderEmail}`;
+
+    const mailtoUrl =
+      `mailto:${CONTACT_EMAIL}` +
+      `?subject=${encodeURIComponent(subject)}` +
+      `&body=${encodeURIComponent(message)}`;
+
+    window.location.href = mailtoUrl;
+
+  });
+
+}
+
+
+// ============================================================
 // HERO TYPEWRITER
 // ============================================================
 
