@@ -379,6 +379,12 @@ nav.menu-list a.active{
 
   padding: 2rem 1.5rem;
 
+  max-width: 250px;
+  min-width: 250px;
+
+  max-height: 170px;
+  min-height: 170px;
+
   border: 1px solid rgba(243, 242, 236, 0.08);
 
   background: rgba(255, 255, 255, 0.02);
@@ -448,7 +454,14 @@ nav.menu-list a.active{
   h1.hero{
     width: 100%;
     max-width: 100%;
-	top: -160px;
+    top: -160px;
+  }
+
+  .project{
+    max-width: none;
+    min-width: none;
+    max-height: none;
+    min-height: none;
   }
 
   .projects-grid{
