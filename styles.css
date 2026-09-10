@@ -1,4 +1,5 @@
 :root{
+  color-scheme: dark;
   --bg: #0c0c0b;
   --text-primary: #f3f2ec;
   --text-secondary: #9c9b95;
@@ -493,3 +494,22 @@ nav.menu-list a.active{
   background:
     rgba(28, 26, 23, 0.4);
 }
+
+
+/* ---------- Hidden Scrollbar ---------- */
+
+/* Chrome, Edge, Safari */
+html::-webkit-scrollbar {
+  display: none;
+}
+
+/* Firefox */
+html {
+  scrollbar-width: none;
+}
+
+/* IE/old Edge */
+html {
+  -ms-overflow-style: none;
+}
+
