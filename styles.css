@@ -447,6 +447,7 @@ nav.menu-list a.active{
   h1.hero{
     width: 100%;
     max-width: 100%;
+	top: -160px;
   }
 
   .projects-grid{
