@@ -10,6 +10,15 @@ menuLinks.forEach(function (link) {
 
     e.preventDefault();
 
+    if (link.dataset.section === 'home') {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+
+      return;
+    }
+
     const targetId = link.dataset.section;
     const target = document.getElementById(targetId);
 
@@ -32,10 +41,6 @@ menuLinks.forEach(function (link) {
 const observer = new IntersectionObserver(
   function (entries) {
 
-    /*
-     * Find the section that is currently closest to
-     * the top of the viewport.
-     */
     const visibleSections = [...entries]
       .filter(function (entry) {
         return entry.isIntersecting;
@@ -172,7 +177,6 @@ if (hero) {
 
   let textIndex = 0;
 
-  // Start completely empty.
   hero.innerHTML = '';
 
   const textContainer =
