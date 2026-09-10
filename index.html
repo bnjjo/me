@@ -22,6 +22,33 @@
 <body>
   <canvas id="bg-canvas"></canvas>
   <div class="bg-blur"></div>
+
+  <canvas id="bg-canvas"></canvas>
+  <div class="bg-blur"></div>
+
+  <header class="mobile-topbar">
+    <button
+      id="mobile-menu-toggle"
+      class="mobile-menu-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="mobile-menu-overlay"
+      aria-label="Open menu"
+    >
+      <span class="mobile-menu-toggle-label">menu</span>
+      <span class="hamburger" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+    </button>
+  </header>
+
+  <nav id="mobile-menu-overlay" class="mobile-menu-overlay">
+    <a href="#home" data-section="home" class="active">home</a>
+    <a href="#projects" data-section="projects">projects</a>
+  </nav>
+
   <div class="layout">
 
     <main class="content">

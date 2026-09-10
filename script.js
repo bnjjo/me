@@ -1,4 +1,4 @@
-const menuLinks = document.querySelectorAll('.menu-list a');
+const menuLinks = document.querySelectorAll('.menu-list a, .mobile-menu-overlay a');
 const sections = document.querySelectorAll('.page-section');
 
 
@@ -9,6 +9,10 @@ menuLinks.forEach(function (link) {
   link.addEventListener('click', function (e) {
 
     e.preventDefault();
+
+    if (link.closest('.mobile-menu-overlay')) {
+      closeMobileMenu();
+    }
 
     if (link.dataset.section === 'home') {
       window.scrollTo({
@@ -75,6 +79,57 @@ const observer = new IntersectionObserver(
 sections.forEach(function (section) {
   observer.observe(section);
 });
+
+// ============================================================
+// MOBILE MENU
+// ============================================================
+
+const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+
+
+function openMobileMenu() {
+
+  mobileMenuOverlay.classList.add('open');
+
+  mobileMenuToggle.setAttribute(
+    'aria-expanded',
+    'true'
+  );
+
+  document.documentElement.classList.add('no-scroll');
+}
+
+
+function closeMobileMenu() {
+
+  mobileMenuOverlay.classList.remove('open');
+
+  mobileMenuToggle.setAttribute(
+    'aria-expanded',
+    'false'
+  );
+
+  document.documentElement.classList.remove('no-scroll');
+}
+
+
+if (mobileMenuToggle && mobileMenuOverlay) {
+
+  mobileMenuToggle.addEventListener('click', function () {
+
+    const isOpen =
+      mobileMenuOverlay.classList.contains('open');
+
+    if (isOpen) {
+      closeMobileMenu();
+    } else {
+      openMobileMenu();
+    }
+
+  });
+
+}
 
 // ============================================================
 // GITHUB PROJECTS
