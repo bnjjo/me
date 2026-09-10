@@ -1,91 +1,126 @@
-<html>
-	<head>
-		<title>bnjjo.dev</title>
-		<link rel="stylesheet" href="styles.css">
-	</head>
-	<body>
-		<div class="title-bar">
-			<h1>bnjjo.dev</h1>
-			<p><i>hello, world!</i></p>
-		</div>
-		<div class="links">
-			<a href="https://github.com/bnjjo"><p>github</p></a>
-			<a href="https://linkedin.com/in/bnjjo"><p>linkedin</p></a>
-		</div>
-		<div>
-			<h2>rust</h2>
-			<ul>
-				<li>
-					<p><strong>bfc</strong> - a brainfuck to x86-64 GNU assembly compiler</p>
-					<a href="https://github.com/bnjjo/bfc"><p>https://github.com/bnjjo/bfc</p></a>
-				</li>
-				<pre><code>$ git clone https://github.com/bnjjo/bfc.git</code></pre>
+<!DOCTYPE html>
+<html lang="en">
 
-				<li>
-					<p><strong>rake</strong> - snake, but in the terminal</p>
-					<a href="https://github.com/bnjjo/rake"><p>https://github.com/bnjjo/rake</p></a>
-				</li>
-				<pre><code>$ git clone https://github.com/bnjjo/rake.git</code></pre>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-				<li>
-					<p><strong>raycaster</strong> - a raycasting engine</p>
-					<a href="https://github.com/bnjjo/raycaster"><p>https://github.com/bnjjo/raycaster</p></a>
-				</li>
-				<pre><code>$ git clone https://github.com/bnjjo/raycaster.git</code></pre>
+  <title>bnjjo.dev</title>
 
-				<li>
-					<p><strong>zel</strong> - work in progress, functional programming language</p>
-					<p>follow the development on <a href="https://github.com/bnjjo/zel">github</a>
-					</p>
-				</li>
-			</ul>
-		</div>
-		<br />
-		<div>
-			<h2>lua</h2>
-			<ul>
-				<li>
-					<p><strong>smolcomp.nvim</strong> - a small emacs compile-mode style plugin for neovim</p>
-					<a href="https://github.com/bnjjo/smolcomp.nvim"><p>https://github.com/bnjjo/smolcomp.nvim</p></a>
-				</li>
-				<pre><code># add to your neovim config:
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-# vim pack
-vim.pack.add({ "https://github.com/bnjjo/smolcomp.nvim" })
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&display=swap"
+    rel="stylesheet"
+  >
 
-# or if you use lazy.nvim
-{
-  "bnjjo/smolcomp.nvim"
-}</code></pre>
-		</div>
-		<br />
-		<div>
-			<h2>miscellaneous</h2>
-			<ul>
-				<li>
-					<p><strong>bnjjo.nvim</strong> - my neovim config</p>
-					<a href="https://github.com/bnjjo/bnjjo.nvim"><p>https://github.com/bnjjo/bnjjo.nvim</p></a>
-				</li>
-				<pre><code>$ git clone https://github.com/bnjjo/bnjjo.nvim.git</code></pre>
+  <link rel="stylesheet" href="styles.css">
+</head>
 
-				<li>
-					<p><strong>dwl</strong> - my fork of dwl</p>
-					<a href="https://github.com/bnjjo/dwl"><p>https://github.com/bnjjo/dwl</p></a>
-				</li>
-				<pre><code>$ git clone https://github.com/bnjjo/dwl.git</code></pre>
+<body>
+  <canvas id="bg-canvas"></canvas>
+  <div class="bg-blur"></div>
+  <div class="layout">
 
-				<li>
-					<p><strong>nix dotfiles</strong> - my dotfiles for nixos and nix-darwin</p>
-					<a href="https://github.com/bnjjo/nix-dotfiles"><p>https://github.com/bnjjo/nix-dotfiles</p></a>
-				</li>
-				<pre><code>$ git clone https://github.com/bnjjo/nix-dotfiles.git</code></pre>
+    <main class="content">
+      <section id="home" class="page-section home-section">
+        <div class="content-inner">
+          <h1 class="hero"></h1>
+          <p class="bio">
+            Hi, I'm <b>Benjamin</b>, I have a passion for building
+            <b>performant, robust, and scalable</b> software.
+            I mainly program in Java and Rust, but strive to master whichever
+            tool can help me achieve my own standard for quality.
+            I believe the best software is built with intention, refined through iteration,
+            <b>and made to last.</b>
+          </p>
 
-				<li>
-					<p><strong>slstatus</strong> - my fork of slstatus</p>
-					<a href="https://github.com/bnjjo/slstatus"><p>https://github.com/bnjjo/slstatus</p></a>
-				</li>
-				<pre><code>$ git clone https://github.com/bnjjo/slstatus.git</code></pre>
-			</ul>
-		</div>
-	</body>
+          <a
+            class="cta"
+            href="https://github.com/bnjjo"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            github
+
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </a>
+        </div>
+      </section>
+
+
+      <!-- PROJECTS -->
+
+      <section id="projects" class="page-section projects-section">
+        <div class="section-inner">
+          <h2 class="section-title">
+            my projects
+          </h2>
+
+          <div class="projects-grid" id="projects-grid">
+            <p class="projects-loading">loading projects...</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+
+    <aside class="sidebar">
+      <div class="menu-label">
+        menu
+      </div>
+
+      <nav class="menu-list">
+        <a href="#home" data-section="home" class="active">
+          <span class="icon-slot">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M3 10.5 12 3l9 7.5"></path>
+              <path d="M5 9.5V20a1 1 0 0 0 1 1h3v-7h6v7h3a1 1 0 0 0 1-1V9.5"></path>
+            </svg>
+          </span>
+          home
+        </a>
+
+
+        <a href="#projects" data-section="projects">
+          <span class="icon-slot">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M3 7.5h6l2 2h10v10.5H3z"></path>
+              <path d="M3 7.5V5a1 1 0 0 1 1-1h5l2 2h3"></path>
+            </svg>
+          </span>
+          projects
+        </a>
+      </nav>
+    </aside>
+  </div>
+
+  <script src="script.js" defer></script>
+
+</body>
 </html>
