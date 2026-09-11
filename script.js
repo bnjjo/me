@@ -261,8 +261,9 @@ if (hero) {
   const heroTexts = [
     'bnjjo.dev',
     'impl fmt::Display for Site {',
-    'putStrLn "Hello, World!"',
-    'interface Lambda {'
+    'package dev.bnjjo;',
+    'bnjjo :: [Idea] -> Software',
+    ':wqa',
   ];
 
   const typingSpeed = 110;
