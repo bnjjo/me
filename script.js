@@ -23,6 +23,15 @@ menuLinks.forEach(function (link) {
       return;
     }
 
+    if (link.dataset.section === 'contact') {
+      window.scrollTo({
+        top: document.documentElement.scrollHeight,
+        behavior: 'smooth'
+      });
+
+      return;
+    }
+
     const targetId = link.dataset.section;
     const target = document.getElementById(targetId);
 
