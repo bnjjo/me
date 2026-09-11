@@ -73,7 +73,7 @@ main.content{
   display: flex;
   flex-direction: column;
 
-  padding: 6vh 8vw;
+  padding: 6vh 8vw 0;
 
   min-width: 0;
 
@@ -344,10 +344,15 @@ nav.menu-list a.active{
 }
 
 .contact-section{
+  position: relative;
+
+  height: 100vh;
   min-height: 100vh;
 
-  padding-top: 120px;
-  padding-bottom: 120px;
+  padding-top: 20px;
+  padding-bottom: 0;
+
+  overflow: hidden;
 }
 
 .section-inner{
@@ -562,6 +567,38 @@ button.contact-submit:hover::after{
   transform: scaleX(1);
 }
 
+
+/* ---------- Footer ---------- */
+
+.site-footer{
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 40px;
+
+  padding: 0;
+
+  text-align: left;
+}
+
+.footer-line{
+  width: 100%;
+
+  border-top: 1px dotted var(--text-muted);
+
+  margin-bottom: 1rem;
+}
+
+.footer-copyright{
+  margin: 0;
+
+  color: var(--text-muted);
+
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+}
+
 /* ---------- Mobile Top Bar ---------- */
 
 .mobile-topbar,
@@ -624,7 +661,11 @@ html.no-scroll{
 
   .contact-section{
     padding-top: 80px;
-    padding-bottom: 80px;
+    padding-bottom: 0;
+  }
+
+  .site-footer{
+    bottom: 24px;
   }
 
   /* ---------- Mobile Top Bar ---------- */
