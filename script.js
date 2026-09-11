@@ -2,6 +2,33 @@ const menuLinks = document.querySelectorAll('.menu-list a, .mobile-menu-overlay 
 const sections = document.querySelectorAll('.page-section');
 
 
+/* ---------- Scroll To Absolute Bottom ---------- */
+
+function scrollToAbsoluteBottom() {
+
+  function target() {
+    return Math.max(
+      document.body.scrollHeight,
+      document.documentElement.scrollHeight
+    );
+  }
+
+  window.scrollTo({
+    top: target(),
+    behavior: 'smooth'
+  });
+
+  // Mobile Safari's collapsing address bar / toolbar changes the
+  // true scrollable range mid-animation, so re-issue once it settles.
+  setTimeout(function () {
+    window.scrollTo({
+      top: target(),
+      behavior: 'auto'
+    });
+  }, 400);
+}
+
+
 /* ---------- Sidebar Navigation ---------- */
 
 menuLinks.forEach(function (link) {
@@ -24,11 +51,7 @@ menuLinks.forEach(function (link) {
     }
 
     if (link.dataset.section === 'contact') {
-      window.scrollTo({
-        top: document.documentElement.scrollHeight,
-        behavior: 'smooth'
-      });
-
+      scrollToAbsoluteBottom();
       return;
     }
 
